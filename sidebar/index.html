@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width">
+    <title>Color theory</title>
+    <link rel="stylesheet" href="app.css" />
+</head>
+<body>
+    <div id="app">
+        <header><h1>Color Theory</h1></header>
+        <fieldset>
+            <label>Select the button to choose a color</label> <input id="color-picker" name="color-picker" type=color value="#e60065" />
+        </fieldset>
+        <section id="color-values">
+            <p>You can also enter the HEX, RGB or Color keyword value below.</p>
+            <div id="hex" class="color">
+                <label for="hex-text">Hex</label><input id="hex-text" type="text" value ="#qwert" maxlength="7" />
+            </div>
+            <div id="color-keyword" class="color">
+                <label for="color-keyword-text">Color Keyword</label><input id="color-keyword-text" type="text" value ="pink" />
+            </div>
+            <div id="rgb" class="color">
+                <label>R<input name="r" type="text" value="" maxlength="3" /></label>
+                <label>G<input name="g" type="text" value="" maxlength="3" /></label>
+                <label>B<input name="b" type="text" value="" maxlength="3" /></label>
+            </div>
+            <button type="submit">submit</button>
+        </section>
+        <section id="color-variations">
+            <div id="compliment" class="color">
+            <p>compliment</p>
+            <span id=compliment-color>&nbsp;</span>
+            </div>
+            <div id="shades" class="color-mixtures">
+            <p>Shades</p>
+            <ul class="color-list">
+                <li class="color-list-item"></li>
+                <li class="color-list-item"></li>
+                <li class="color-list-item"></li>
+                <li class="color-list-item"></li>
+                <li class="color-list-item"></li>
+                <li class="color-list-item"></li>
+                <li class="color-list-item"></li>
+                <li class="color-list-item"></li>
+                <li class="color-list-item"></li>
+                <li class="color-list-item"></li>
+            </ul>
+            </div>
+            <div id="tints" class="color-mixtures">
+                <p>Tints</p>
+                <ul class="color-list">
+                    <li class="color-list-item"></li>
+                    <li class="color-list-item"></li>
+                    <li class="color-list-item"></li>
+                    <li class="color-list-item"></li>
+                    <li class="color-list-item"></li>
+                    <li class="color-list-item"></li>
+                    <li class="color-list-item"></li>
+                    <li class="color-list-item"></li>
+                    <li class="color-list-item"></li>
+                    <li class="color-list-item"></li>
+                </ul>
+            </div>
+            <div id="tones" class="color-mixtures">
+                <p>Tones</p>
+                <ul class="color-list">
+                    <li class="color-list-item"></li>
+                    <li class="color-list-item"></li>
+                    <li class="color-list-item"></li>
+                    <li class="color-list-item"></li>
+                    <li class="color-list-item"></li>
+                    <li class="color-list-item"></li>
+                    <li class="color-list-item"></li>
+                    <li class="color-list-item"></li>
+                    <li class="color-list-item"></li>
+                    <li class="color-list-item"></li>
+                </ul>
+            </div>
+        </section>
+    </div>
+    <script type="module" src="./app.js"></script>
+</body>
+</html>
