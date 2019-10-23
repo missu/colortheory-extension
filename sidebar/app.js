@@ -24,7 +24,7 @@ let appState = {
 };
   
 function setup(){
-    let color = `${Math.floor(Math.random()*256)}, ${Math.floor(Math.random()*256)}, ${Math.floor(Math.random()*256)}`;
+    let color = `${Math.floor(Math.random()*256)},${Math.floor(Math.random()*256)},${Math.floor(Math.random()*256)}`;
     updateState(updateColor(color));
 }
   
@@ -33,7 +33,7 @@ function updateColor(color){
         "backgroundColor" : updateBgColor(color),
         "colorHex": colorTheory.rgbToHex(color),
         "colorRGB" : colorTheory.hexToRgb(color),
-        "colorKeyword" : "",
+        "colorKeyword" : colorTheory.hexToName(colorTheory.rgbToHex(color)) || "",
         "compliment" : colorTheory.rgbToHex(colorTheory.compliment(color)),
         "shades": colorTheory.shades(colorTheory.rgbToHex(color)),
         "tints": colorTheory.tints(colorTheory.rgbToHex(color)),
@@ -64,21 +64,27 @@ function onChange(event) {
 }
   
 function onSubmit(event) {
-    const hex = document.getElementById("hex-text").value;
-    const r = document.querySelector('input[name="r"]').value;
-    const g = document.querySelector('input[name="g"]').value;
-    const b = document.querySelector('input[name="b"]').value;
-    const rgb = `${r}, ${g}, ${b}`;
-    const keyword  = document.getElementById("color-keyword-text").value;
-  
-    if (hex !== appState.colorHex){
+    const hex = document.getElementById("hex-text").value.trim();
+    const r = document.querySelector('input[name="r"]').value.trim();
+    const g = document.querySelector('input[name="g"]').value.trim();
+    const b = document.querySelector('input[name="b"]').value.trim();
+    const rgb = `${r},${g},${b}`;
+    const keyword  = document.getElementById("color-keyword-text").value.toLowerCase().trim();
+  console.log('appState.colorRGB', appState.colorRGB);
+  console.log('RGB', rgb);
+    if (hex !== appState.colorHex) {
         updateState(updateColor(hex));
-    } else if (rgb !== appState.colorRGB){
+    } else if (rgb !== appState.colorRGB) {
         updateState(updateColor(rgb));
-    } else if (keyword && keyword !== appState.colorKeyword){
-        let color = colorTheory.nameTohex(keyword);
+    } else if (keyword && keyword !== appState.colorKeyword) {
+        let color = colorTheory.nameToHex(keyword);
         if (color) {
             updateState(updateColor(color));
+        } else {
+            document.getElementById("color-keyword-text").value = "";
+            console.log('keyword not working or not found:');
+            console.log('keyword', keyword);
+            console.log('color', color);
         }
         // TODO: add a message telling the user there wasn't a keyword match
     }  

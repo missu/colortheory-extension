@@ -52,7 +52,7 @@ class ColorTheory {
             return (colorKeywords[name][0]).toUpperCase();
         }
         else {
-            return undefined;
+            return null;
         }
     }
 
@@ -61,8 +61,26 @@ class ColorTheory {
             return colorKeywords[name][1];
         }
         else {
-            return undefined;
+            return null;
         }
+    }
+
+    hexToName(hex) {
+        for (let [key, value] of Object.entries(colorKeywords)) {
+            if (hex.toLowerCase() === value[0]) {
+                return key;
+            }
+        }
+        return null;
+    }
+
+    rgbToName(rgb) {
+        for (let [key, value] of Object.entries(colorKeywords)) {
+            if (rgb === value[1]) {
+                return key;
+            }
+        }
+        return null;
     }
 
     // Ranges of Color
@@ -316,7 +334,8 @@ class ColorTheory {
         else if (color[0] === '#') {
             let hex = this.splitChannels(color);
             hex = hex.map((element) => {
-                return  (Math.abs(parseInt(element, 16) - 255)).toString(16);
+                let hexChannel = (Math.abs(parseInt(element, 16) - 255)).toString(16);
+                return  hexChannel.length < 2 ? '0'+hexChannel : hexChannel;
             });
 
             return `#${hex[0]}${hex[1]}${hex[2]}`;
