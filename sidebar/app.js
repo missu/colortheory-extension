@@ -70,8 +70,7 @@ function onSubmit(event) {
     const b = document.querySelector('input[name="b"]').value.trim();
     const rgb = `${r},${g},${b}`;
     const keyword  = document.getElementById("color-keyword-text").value.toLowerCase().trim();
-  console.log('appState.colorRGB', appState.colorRGB);
-  console.log('RGB', rgb);
+ 
     if (hex !== appState.colorHex) {
         updateState(updateColor(hex));
     } else if (rgb !== appState.colorRGB) {
@@ -82,9 +81,6 @@ function onSubmit(event) {
             updateState(updateColor(color));
         } else {
             document.getElementById("color-keyword-text").value = "";
-            console.log('keyword not working or not found:');
-            console.log('keyword', keyword);
-            console.log('color', color);
         }
         // TODO: add a message telling the user there wasn't a keyword match
     }  
@@ -101,6 +97,7 @@ function render() {
     
     const compliment = document.getElementById("compliment-color")
     compliment.style.backgroundColor = appState.compliment;
+    compliment.children[0].textContent = appState.compliment;
     
     const shadesParent = document.querySelector("#shades .color-list");
     renderList(shadesParent, appState.shades);
@@ -117,6 +114,7 @@ function renderList(parent, colors){
     
     for (let i = 0; i < children.length; i++) {
         children[i].style.backgroundColor = colors[i];
+        children[i].children[0].textContent = colors[i];
     }
 }
   
