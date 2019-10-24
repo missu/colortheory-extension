@@ -4,6 +4,7 @@
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width">
     <title>Color theory</title>
+    <link href="https://fonts.googleapis.com/css?family=Nunito|Titillium+Web&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="app.css" />
 </head>
 <body>
@@ -13,7 +14,7 @@
             <label>Select the button to choose a color</label> <input id="color-picker" name="color-picker" type=color value="#e60065" />
         </fieldset>
         <section id="color-values">
-            <p>You can also enter the HEX, RGB or Color keyword value below.</p>
+            <p>You can also enter the Hex, RGB or Color Keyword value below.</p>
             <div id="hex" class="color">
                 <label for="hex-text">Hex</label><input id="hex-text" type="text" value ="#qwert" maxlength="7" />
             </div>
@@ -21,9 +22,9 @@
                 <label for="color-keyword-text">Color Keyword</label><input id="color-keyword-text" type="text" value ="pink" />
             </div>
             <div id="rgb" class="color">
-                <label>R<input name="r" type="text" value="" maxlength="3" /></label>
-                <label>G<input name="g" type="text" value="" maxlength="3" /></label>
-                <label>B<input name="b" type="text" value="" maxlength="3" /></label>
+                <label>R<input name="r" type="number" value="" min="0" max="255" /></label>
+                <label>G<input name="g" type="number" value="" min="0" max="255" /></label>
+                <label>B<input name="b" type="number" value="" min="0" max="255" /></label>
             </div>
             <button type="submit">Submit</button>
         </section>
@@ -32,54 +33,57 @@
             <p>Compliment</p>
             <span id=compliment-color><span>&nbsp;</span></span>
             </div>
-            <div id="shades" class="color-mixtures">
-            <p>Shades</p>
-            <ul class="color-list">
-                <li class="color-list-item"><span></span></li>
-                <li class="color-list-item"><span></span></li>
-                <li class="color-list-item"><span></span></li>
-                <li class="color-list-item"><span></span></li>
-                <li class="color-list-item"><span></span></li>
-                <li class="color-list-item"><span></span></li>
-                <li class="color-list-item"><span></span></li>
-                <li class="color-list-item"><span></span></li>
-                <li class="color-list-item"><span></span></li>
-                <li class="color-list-item"><span></span></li>
-                <li class="color-list-item"><span></span></li>
-            </ul>
-            </div>
-            <div id="tints" class="color-mixtures">
-                <p>Tints</p>
-                <ul class="color-list">
-                    <li class="color-list-item"><span></span></li>
-                    <li class="color-list-item"><span></span></li>
-                    <li class="color-list-item"><span></span></li>
-                    <li class="color-list-item"><span></span></li>
-                    <li class="color-list-item"><span></span></li>
-                    <li class="color-list-item"><span></span></li>
-                    <li class="color-list-item"><span></span></li>
-                    <li class="color-list-item"><span></span></li>
-                    <li class="color-list-item"><span></span></li>
-                    <li class="color-list-item"><span></span></li>
-                    <li class="color-list-item"><span></span></li>
-                </ul>
-            </div>
-            <div id="tones" class="color-mixtures">
-                <p>Tones</p>
-                <ul class="color-list">
-                    <li class="color-list-item"><span></span></li>
-                    <li class="color-list-item"><span></span></li>
-                    <li class="color-list-item"><span></span></li>
-                    <li class="color-list-item"><span></span></li>
-                    <li class="color-list-item"><span></span></li>
-                    <li class="color-list-item"><span></span></li>
-                    <li class="color-list-item"><span></span></li>
-                    <li class="color-list-item"><span></span></li>
-                    <li class="color-list-item"><span></span></li>
-                    <li class="color-list-item"><span></span></li>
-                    <li class="color-list-item"><span></span></li>
-                </ul>
-            </div>
+            <section id="colorations">
+                    <div id="shades" class="color-mixtures">
+                        <p>Shades</p>
+                        <ul class="color-list">
+                            <li class="color-list-item"><span></span></li>
+                            <li class="color-list-item"><span></span></li>
+                            <li class="color-list-item"><span></span></li>
+                            <li class="color-list-item"><span></span></li>
+                            <li class="color-list-item"><span></span></li>
+                            <li class="color-list-item"><span></span></li>
+                            <li class="color-list-item"><span></span></li>
+                            <li class="color-list-item"><span></span></li>
+                            <li class="color-list-item"><span></span></li>
+                            <li class="color-list-item"><span></span></li>
+                            <li class="color-list-item"><span></span></li>
+                        </ul>
+                    </div>
+                    <div id="tints" class="color-mixtures">
+                        <p>Tints</p>
+                        <ul class="color-list">
+                            <li class="color-list-item"><span></span></li>
+                            <li class="color-list-item"><span></span></li>
+                            <li class="color-list-item"><span></span></li>
+                            <li class="color-list-item"><span></span></li>
+                            <li class="color-list-item"><span></span></li>
+                            <li class="color-list-item"><span></span></li>
+                            <li class="color-list-item"><span></span></li>
+                            <li class="color-list-item"><span></span></li>
+                            <li class="color-list-item"><span></span></li>
+                            <li class="color-list-item"><span></span></li>
+                            <li class="color-list-item"><span></span></li>
+                        </ul>
+                    </div>
+                    <div id="tones" class="color-mixtures">
+                        <p>Tones</p>
+                        <ul class="color-list">
+                            <li class="color-list-item"><span></span></li>
+                            <li class="color-list-item"><span></span></li>
+                            <li class="color-list-item"><span></span></li>
+                            <li class="color-list-item"><span></span></li>
+                            <li class="color-list-item"><span></span></li>
+                            <li class="color-list-item"><span></span></li>
+                            <li class="color-list-item"><span></span></li>
+                            <li class="color-list-item"><span></span></li>
+                            <li class="color-list-item"><span></span></li>
+                            <li class="color-list-item"><span></span></li>
+                            <li class="color-list-item"><span></span></li>
+                        </ul>
+                    </div>
+            </section>
+            
         </section>
     </div>
     <script type="module" src="./app.js"></script>

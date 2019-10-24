@@ -1,0 +1,25 @@
+{
+  "name": "colortheory-extension",
+  "version": "0.9.0",
+  "description": "a browser extension that uses the colortheory.js library",
+  "scripts": {
+    "start": "web-ext run",
+    "build": "web-ext build",
+    "validate": "web-ext lint",
+    "helpme": "web-ext docs",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/missu/colortheory-extension.git"
+  },
+  "keywords": ["browser extension, extension, color theory, color picker"],
+  "author": "missu",
+  "bugs": {
+    "url": "https://github.com/missu/colortheory-extension/issues"
+  },
+  "homepage": "https://github.com/missu/colortheory-extension#readme",
+  "devDependencies" :{
+    "web-ext": "^3.2.0"
+  }
+}

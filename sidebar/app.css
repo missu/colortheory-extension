@@ -13,16 +13,22 @@ html, body {
     font-size: 1rem;
 }
 
-
 body {
     color: #222;
     padding: 12px;
-
+    font-family: 'Nunito', sans-serif;
 }
   
 h1 {
-    text-align: center;
+    font-family: 'Titillium Web', sans-serif;
     margin: 8px 24px;
+    text-align: center;
+}
+h1:after {
+    content: "BETA";
+    font-size: 10px;
+    position: absolute;
+    vertical-align: super;
 }
   
 fieldset {
@@ -54,6 +60,10 @@ fieldset, #color-values,
     display: block;
 }
   
+#color-values input {
+    border-radius: 3px;
+}
+
 #color-keyword input,
 #hex input {
     height: 28px;
@@ -68,10 +78,12 @@ fieldset, #color-values,
     height: 28px;
     margin-left: 4px;
     padding-left: 4px;
-    width: 32px;
+    width: 48px;
 }
   
 #color-values button {
+    background-color: #FFFFFF;
+    border: 1px solid #151515;
     border-radius: 3px;
     cursor: pointer;
     height: 28px;
@@ -80,6 +92,13 @@ fieldset, #color-values,
     vertical-align: middle;
     width: 100%
 }
+
+#color-values button:hover,
+#color-values button:active,
+#color-values button:focus {
+    background-color: #bbb;
+    color: #FFFFFF;
+}
   
 #compliment {
     margin-bottom: 12px;
@@ -87,28 +106,27 @@ fieldset, #color-values,
 #compliment-color {
     background-color: #888;
     display: block;
-    width:88%;
+    width: 100%;
 }
 #compliment-color span {
     display: block;
     text-align: center;
     visibility: hidden;
 }
-#compliment-color:hover span,
-#compliment-color:active span,
-#compliment-color:focus span  {
-    visibility: visible;
+
+#colorations {
+   display: flex; 
+   justify-content: space-between;
 }
-  
+
 #shades, #tints, #tones {
-    display: inline-block;
-    width: 28.8%;
+    width: 32%;
     text-align: center;
 }
-  
+ 
 .color-list .color-list-item {
     height: 20px;
-    width: 88%;
+    width: 100%;
 }
 .color-list .color-list-item span {
     display: block;
@@ -117,10 +135,14 @@ fieldset, #color-values,
     transition-timing-function: ease-out;
     visibility: hidden;
 }
-  
+
+#compliment-color:hover span,
+#compliment-color:active span,
+#compliment-color:focus span,
 .color-list .color-list-item:hover span,
 .color-list .color-list-item:active span,
 .color-list .color-list-item:focus span {
-    visibility: visible;
     background-color: rgba(255, 255, 255, 40%);
+    user-select: all;
+    visibility: visible;
 }

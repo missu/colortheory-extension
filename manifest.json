@@ -2,7 +2,7 @@
     "manifest_version" : 2,
     "name": "Color Theory",
     "version": "0.9",
-    "description": "An extension to help with choosing colors.",
+    "description": "An extension to help with choosing and understanding colors.",
     "homepage_url" : "https://github.com/missu/colortheory-extension",
     "icons" : {
         "48" : "icons/logo-48.PNG",
