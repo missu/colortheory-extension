@@ -9,7 +9,8 @@ updates:
     directory: "/" # Location of package manifests
     schedule:
       interval: "daily"
-    assignees: "missu"
+    assignees: 
+      - "missu"
     labels:
       - "npm dependencies"
     commit-message:
