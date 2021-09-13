@@ -20,6 +20,6 @@
   },
   "homepage": "https://github.com/missu/colortheory-extension#readme",
   "devDependencies" :{
-    "web-ext": "^5.2.0"
+    "web-ext": "^6.4.0"
   }
 }
